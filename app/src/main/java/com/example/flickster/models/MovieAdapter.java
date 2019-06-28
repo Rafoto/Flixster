@@ -15,6 +15,8 @@ import com.example.flickster.R;
 
 import java.util.ArrayList;
 
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
+
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
     ArrayList<Movie> movies;
     Config config;
@@ -45,16 +47,20 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
     // binds an inflated view to a new item
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        int radius = 30;
+        int margin = 5;
         Movie movie = movies.get(position);
         //holder.ivPosterImage.setImageIcon(movie.getPosterPath());
         holder.tvTitle.setText(movie.getTitle());
         holder.tvOverview.setText(movie.getOverview());
         String imageUrl = config.getImageUrl(config.getPosterSize(), movie.getPosterPath());
+
         //load image using guide
         Glide.with(context)
                 .load(imageUrl)
-//                .error(R.drawable.flicks_movie_placeholder)
-//                .placeholder(R.drawable.flicks_movie_placeholder)
+                .error(R.drawable.flicks_movie_placeholder)
+                .placeholder(R.drawable.flicks_movie_placeholder)
+                .bitmapTransform(new RoundedCornersTransformation(context, radius, margin))
                 .into(holder.ivPosterImage);
 
 
