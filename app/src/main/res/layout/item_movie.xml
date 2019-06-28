@@ -27,7 +27,8 @@
         android:layout_toEndOf="@+id/ivPosterImage"
         android:layout_toRightOf="@+id/ivPosterImage"
         android:text="Movie overview and synopsis"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="#979494" />
 
 
     <TextView
@@ -43,5 +44,5 @@
         android:layout_toRightOf="@+id/ivPosterImage"
         android:text="Movie Title"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#000000" />
+        android:textColor="#FFFFFF" />
 </RelativeLayout>

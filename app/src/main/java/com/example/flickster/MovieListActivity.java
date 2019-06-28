@@ -61,6 +61,7 @@ public class MovieListActivity extends AppCompatActivity {
         getConfiguration();
 
     }
+
     // get the list of currently playing movies from the API
     private void getNowPlaying() {
         // create the url
